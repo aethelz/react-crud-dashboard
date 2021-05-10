@@ -4,7 +4,9 @@ import { fetchItems } from './shared/api';
 import Wrapper from './Wrapper';
 import PageLoader from './PageLoader';
 import PageError from './PageError';
-import ItemTable from './ItemTable';
+// import ItemTable from './ItemTable';
+import Overview from './Overview';
+import FilteredItemTable from './FilteredItemTable';
 
 function App() {
   const { isLoading, data } = useQuery('movies', fetchItems);
@@ -12,7 +14,8 @@ function App() {
   if (!data) return <PageError />;
   return (
     <Wrapper>
-      <ItemTable items={data.items} />
+      <Overview items={data.items}/>
+      <FilteredItemTable items={data.items} />
     </Wrapper>
   );
 }
