@@ -1,0 +1,9 @@
+.remove {
+  composes: resetButton from '../../shared/utility.module.scss';
+  img {
+    width: 20px;
+  }
+}
+.favorite {
+  composes: resetButton from '../../shared/utility.module.scss';
+}
