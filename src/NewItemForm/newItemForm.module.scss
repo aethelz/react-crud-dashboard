@@ -1,4 +1,40 @@
+@import '../shared/colors.scss';
+
 .wrapper {
   display: flex;
   flex-direction: column;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  label {
+    margin: 0.5em;
+  }
+  input {
+    height: 3em;
+    min-width: 25em;
+    padding: 0 1em;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 2px solid grey;
+    margin: 0.5em 0;
+  }
+}
+.reset {
+  composes: normalButton from '../shared/commonElements.module.scss';
+  margin-right: 0.5em;
+}
+.add {
+  composes: normalButton from '../shared/commonElements.module.scss';
+  background-color: $color1;
+  color: white;
+}
+.totalWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em 0;
 }

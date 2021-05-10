@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { NewItem } from '../shared/types';
 import styles from './newItemForm.module.scss';
-import { CURRENCY, TAX } from '../shared/CONSTANTS';
+import { TAX } from '../shared/CONSTANTS';
 import { calculateGross, calculateTax, formatCurrency } from '../shared/utils';
 
 type Props = {
@@ -20,32 +20,46 @@ const NewItemForm = ({ onItemAdd }: Props) => {
   }
   return (
     <div className={styles.wrapper}>
-      <div>Name *</div>
-      <input
-        type="text"
-        value={name}
-        placeholder="Enter a name"
-        onChange={({ currentTarget: { value } }) => setName(value)}
-      />
-      <div>Net *</div>
-      <input
-        type="number"
-        min="0"
-        value={net}
-        placeholder="Enter an amount"
-        onChange={({ currentTarget: { value } }) => {
-          const numVal = Number(value);
-          const val = numVal >= 0 ? numVal : 0;
-          setNet(String(val));
-        }}
-      />
+      <div className={styles.inputWrapper}>
+        <label>
+          Name *<br />
+          <input
+            id="name"
+            type="text"
+            value={name}
+            placeholder="Enter a name"
+            onChange={({ currentTarget: { value } }) => setName(value)}
+          />
+        </label>
+        <label>
+          Net *<br />
+          <input
+            id="net"
+            type="number"
+            min="0"
+            value={net}
+            placeholder="Enter an amount"
+            onChange={({ currentTarget: { value } }) => {
+              const numVal = Number(value);
+              const val = numVal >= 0 ? numVal : 0;
+              setNet(String(val));
+            }}
+          />
+        </label>
+      </div>
 
-      <div>Tax</div>
-      <div>{TAX * 100}%</div>
-      <div>Gross</div>
-      <div>{formatCurrency(gross)}</div>
+      <div className={styles.totalWrapper}>
+        <div>
+          <div>Tax</div>
+          <div>{TAX * 100}%</div>
+        </div>
+        <div>
+          <div>Gross</div>
+          <div>{formatCurrency(gross)}</div>
+        </div>
+      </div>
 
-      <div>
+      <div className={styles.buttonWrapper}>
         <button onClick={resetField} className={styles.reset}>
           Reset
         </button>

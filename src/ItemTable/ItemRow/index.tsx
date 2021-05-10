@@ -22,7 +22,7 @@ const ItemRow = ({ item, onCrossClick, onStarClick }: Props) => {
       <td>{formatCurrency(gross)}</td>
       <td>
         <button className={styles.remove} onClick={onCrossClick}>
-          <img src={cross} />
+          <img alt="delete item" src={cross} />
         </button>
         <button className={styles.favorite} onClick={onStarClick}>
           <Star painted={item.isFavourite} />

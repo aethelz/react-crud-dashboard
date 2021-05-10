@@ -1,7 +1,16 @@
+@import '../shared/colors.scss';
+
 .wrapper {
   display: flex;
   flex-direction: column;
+  background-color: $color2;
+  padding: 2em;
+  min-width: 20em;
+  h2 {
+    margin: 0;
+  }
 }
+
 
 .tableWrapper {
   & > * {

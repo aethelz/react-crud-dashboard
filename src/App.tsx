@@ -1,13 +1,14 @@
 import './App.css';
+import styles from './app.module.scss';
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { fetchItems } from './shared/api';
 import type { ClientItem, NewItem } from './shared/types';
 import { makeClientItemList, generateID } from './shared/utils';
 import Wrapper from './Wrapper';
+import Header from './Header';
 import PageLoader from './PageLoader';
 import PageError from './PageError';
-// import ItemTable from './ItemTable';
 import Overview from './Overview';
 import NewItemForm from './NewItemForm';
 import FilteredItemTable from './FilteredItemTable';
@@ -34,7 +35,7 @@ function App() {
   }
   async function onItemAdd(item: NewItem) {
     const id = await generateID(clientItems);
-    const itemWithID = {...item, id}
+    const itemWithID = { ...item, id };
     setClientItems(items => [itemWithID, ...items]);
   }
 
@@ -43,13 +44,18 @@ function App() {
 
   return (
     <Wrapper>
-      <NewItemForm onItemAdd={onItemAdd} />
-      <Overview items={clientItems} />
-      <FilteredItemTable
-        items={clientItems}
-        onItemRemove={onItemRemove}
-        onItemToggleFavorite={onItemToggleFavorite}
-      />
+      <Header />
+      <div className={styles.bodyWrapper}>
+        <div className={styles.nameOverviewWrapper}>
+          <NewItemForm onItemAdd={onItemAdd} />
+          <Overview items={clientItems} />
+        </div>
+        <FilteredItemTable
+          items={clientItems}
+          onItemRemove={onItemRemove}
+          onItemToggleFavorite={onItemToggleFavorite}
+        />
+      </div>
     </Wrapper>
   );
 }

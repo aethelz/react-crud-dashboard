@@ -36,5 +36,8 @@ export function generateID(items: ClientItem[]): Promise<number> {
 }
 
 export function formatCurrency(value: number): string {
-  return value.toFixed(2) + ' ' + CURRENCY;
+  return new Intl.NumberFormat('de-DE', {
+    style: 'currency',
+    currency: 'EUR',
+  }).format(value);
 }

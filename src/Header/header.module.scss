@@ -1,0 +1,9 @@
+@import '../shared/colors.scss';
+
+.wrapper {
+  background-color: $color1;
+  padding: 1em;
+  img {
+    height: 30px;
+  }
+}

@@ -19,12 +19,19 @@ const FilteredItemTable = ({
     : items;
   return (
     <div className={styles.wrapper}>
-      <button onClick={() => setIsFiltered(f => !f)}>Show favourites</button>
-      <ItemTable
-        items={filteredItems}
-        onItemRemove={onItemRemove}
-        onItemToggleFavorite={onItemToggleFavorite}
-      />
+      <button
+        className={styles.filterButton}
+        onClick={() => setIsFiltered(f => !f)}
+      >
+        Show {isFiltered ? 'all' : 'favourites'}
+      </button>
+      <div className={styles.tableWrapper}>
+        <ItemTable
+          items={filteredItems}
+          onItemRemove={onItemRemove}
+          onItemToggleFavorite={onItemToggleFavorite}
+        />
+      </div>
     </div>
   );
 };
