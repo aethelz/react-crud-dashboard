@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "id": 1, "name": "TestItem1", "net": "1000.0", "tax": "160.0" },
+    { "id": 2, "name": "TestItem2", "net": "1500.32", "tax": "240.0512" },
+    { "id": 3, "name": "TestItem3", "net": "2000.5", "tax": "320.08" },
+    { "id": 4, "name": "TestItem4", "net": "1500.32", "tax": "240.0512" }
+  ]
+}

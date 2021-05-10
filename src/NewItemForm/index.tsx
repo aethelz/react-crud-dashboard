@@ -25,6 +25,7 @@ const NewItemForm = ({ onItemAdd }: Props) => {
           Name *<br />
           <input
             id="name"
+            data-cy="nameInput"
             type="text"
             value={name}
             placeholder="Enter a name"
@@ -35,6 +36,7 @@ const NewItemForm = ({ onItemAdd }: Props) => {
           Net *<br />
           <input
             id="net"
+            data-cy="netInput"
             type="number"
             min="0"
             value={net}
@@ -65,6 +67,7 @@ const NewItemForm = ({ onItemAdd }: Props) => {
         </button>
         <button
           disabled={!net || !name}
+          data-cy="addItem"
           onClick={() => {
             const newItem: NewItem = {
               net,

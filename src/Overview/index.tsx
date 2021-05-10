@@ -1,5 +1,9 @@
 import type { ClientItem } from '../shared/types';
-import { calculateTotalSum, calculateAverage, formatCurrency } from '../shared/utils';
+import {
+  calculateTotalSum,
+  calculateAverage,
+  formatCurrency,
+} from '../shared/utils';
 import styles from './overview.module.scss';
 
 type Props = {
@@ -15,17 +19,17 @@ const Overview = ({ items }: Props) => {
       <div className={styles.tableWrapper}>
         <div>
           <div>Total Sum</div>
-          <div>{formatCurrency(sum)}</div>
+          <div data-cy="overviewSum">{formatCurrency(sum)}</div>
         </div>
 
         <div>
           <div>Average</div>
-          <div>{formatCurrency(average)}</div>
+          <div data-cy="overviewAverage">{formatCurrency(average)}</div>
         </div>
 
         <div>
           <div>Total Items</div>
-          <div>{itemsCount}</div>
+          <div data-cy="overviewItemCount">{itemsCount}</div>
         </div>
       </div>
     </div>

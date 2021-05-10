@@ -20,7 +20,7 @@ const ItemTable = ({ items, onItemRemove, onItemToggleFavorite }: Props) => {
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody data-cy="itemContainer">
           {items.map(item => (
             <ItemRow
               onCrossClick={() => onItemRemove(item.id)}

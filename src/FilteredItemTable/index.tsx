@@ -22,6 +22,7 @@ const FilteredItemTable = ({
       <button
         className={styles.filterButton}
         onClick={() => setIsFiltered(f => !f)}
+        data-cy="filterFavorites"
       >
         Show {isFiltered ? 'all' : 'favourites'}
       </button>

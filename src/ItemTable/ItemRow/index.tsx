@@ -21,10 +21,18 @@ const ItemRow = ({ item, onCrossClick, onStarClick }: Props) => {
       <td>{formatCurrency(numericTax)}</td>
       <td>{formatCurrency(gross)}</td>
       <td>
-        <button className={styles.remove} onClick={onCrossClick}>
+        <button
+          data-cy={`deleteItemN${item.id}`}
+          className={styles.remove}
+          onClick={onCrossClick}
+        >
           <img alt="delete item" src={cross} />
         </button>
-        <button className={styles.favorite} onClick={onStarClick}>
+        <button
+          data-cy={`star${item.id}`}
+          className={styles.favorite}
+          onClick={onStarClick}
+        >
           <Star painted={item.isFavourite} />
         </button>
       </td>
