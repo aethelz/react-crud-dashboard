@@ -1,11 +1,13 @@
-import type { Item } from '../shared/types';
+import type { ClientItem } from '../shared/types';
 import ItemRow from './ItemRow';
 import styles from './itemTable.module.scss';
 
 type Props = {
-  items: Item[];
+  items: ClientItem[];
+  onItemRemove: (idx: number) => void;
+  onItemToggleFavorite: (idx: number) => void;
 };
-const ItemTable = ({ items }: Props) => {
+const ItemTable = ({ items, onItemRemove, onItemToggleFavorite }: Props) => {
   return (
     <div className={styles.wrapper}>
       <table>
@@ -17,7 +19,12 @@ const ItemTable = ({ items }: Props) => {
           <th></th>
         </tr>
         {items.map(item => (
-          <ItemRow key={item.id} item={item} />
+          <ItemRow
+            onCrossClick={() => onItemRemove(item.id)}
+            onStarClick={() => onItemToggleFavorite(item.id)}
+            key={item.id}
+            item={item}
+          />
         ))}
       </table>
     </div>
