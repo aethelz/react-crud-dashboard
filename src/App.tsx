@@ -15,9 +15,11 @@ import FilteredItemTable from './FilteredItemTable';
 function App() {
   const [clientItems, setClientItems] = useState<ClientItem[]>([]);
   const { isLoading, data } = useQuery('items', fetchItems, {
-    // Prevent react-query from refetching items from backend and resetting client state,
-    // in production this will not be necessary, we will send POST mutations directly to the backend
-    // although depending on the requirements we might have to store favorite items as a client state
+    // Prevent react-query from refetching items from backend and resetting
+    // client state, with production API this will not be necessary,
+    // we will send POST mutations directly to the backend, although
+    // depending on the requirements, we might have to store favorite items
+    // as a client state in web storage for example
     staleTime: Number.POSITIVE_INFINITY,
   });
   useEffect(() => {
@@ -36,8 +38,9 @@ function App() {
     setClientItems(updatedItems);
   }
   async function onItemAdd(item: NewItem) {
+    // Simulate requesting UUID from backend
     const id = await generateID(clientItems);
-    const itemWithID = { ...item, id };
+    const itemWithID: ClientItem = { ...item, id };
     setClientItems(items => [itemWithID, ...items]);
   }
 

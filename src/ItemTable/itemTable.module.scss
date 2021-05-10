@@ -1,17 +1,19 @@
+@import '../shared/colors.scss';
+
 .table {
   width: 100%;
   border-collapse: collapse;
   td,
   th {
-    border: 1px solid #ddd;
-    padding: 0.5em;
+    border: 1px solid $color2;
+    padding: 0.8em;
   }
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: $color2;
   }
   tbody {
     tr:hover {
-      background-color: #ddd;
+      background-color: $color1;
     }
   }
   td:last-child {
