@@ -15,8 +15,7 @@ const Overview = ({ items }: Props) => {
   const itemsCount = items.length;
   return (
     <div className={styles.wrapper}>
-      <h2>Overview</h2>
-      <div className={styles.tableWrapper}>
+        <div>Overview</div>
         <div>
           <div>Total Sum</div>
           <div data-cy="overviewSum">{formatCurrency(sum)}</div>
@@ -31,7 +30,6 @@ const Overview = ({ items }: Props) => {
           <div>Total Items</div>
           <div data-cy="overviewItemCount">{itemsCount}</div>
         </div>
-      </div>
     </div>
   );
 };

@@ -53,7 +53,7 @@ const NewItemForm = ({ onItemAdd }: Props) => {
       <div className={styles.totalWrapper}>
         <div>
           <div>Tax</div>
-          <div>{TAX * 100}%</div>
+          <div>{(TAX * 100).toFixed(2)} %</div>
         </div>
         <div>
           <div>Gross</div>

@@ -2,7 +2,8 @@ import type { Item, ClientItem } from './types';
 import { CURRENCY } from './CONSTANTS';
 
 export function calculateTax(net: number, taxPercent: number): number {
-  return net * (1 + taxPercent);
+  const tax = net * taxPercent;
+  return tax;
 }
 
 export function calculateGross(net: number, calculatedTax: number): number {
@@ -14,7 +15,7 @@ export function calculateTotalSum(items: Item[]): number {
 }
 
 export function calculateAverage(items: Item[]): number {
-  return calculateTotalSum(items) / items.length;
+  return items.length ? calculateTotalSum(items) / items.length : 0;
 }
 
 export function calculateArraySum(arr: number[]): number {

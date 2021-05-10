@@ -32,6 +32,9 @@
 .totalWrapper {
   display: flex;
   justify-content: flex-end;
+  & > * {
+    margin: 1em;
+  }
 }
 .buttonWrapper {
   display: flex;

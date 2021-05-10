@@ -3,19 +3,22 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   background-color: $color2;
   padding: 2em;
   min-width: 20em;
-  h2 {
-    margin: 0;
-  }
-}
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-.tableWrapper {
   & > * {
     display: flex;
     justify-content: space-between;
     margin: 1em;
   }
+}
+
+
+.tableWrapper {
 }
