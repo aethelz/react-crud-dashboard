@@ -1,4 +1,3 @@
-import './App.css';
 import styles from './app.module.scss';
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
@@ -16,6 +15,9 @@ import FilteredItemTable from './FilteredItemTable';
 function App() {
   const [clientItems, setClientItems] = useState<ClientItem[]>([]);
   const { isLoading, data } = useQuery('items', fetchItems, {
+    // Prevent react-query from refetching items from backend and resetting client state,
+    // in production this will not be necessary, we will send POST mutations directly to the backend
+    // although depending on the requirements we might have to store favorite items as a client state
     staleTime: Number.POSITIVE_INFINITY,
   });
   useEffect(() => {

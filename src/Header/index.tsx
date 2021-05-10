@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className={styles.wrapper}>
       <img
-        alt="Alasco"
+        alt="Alasco Logo"
         src="https://www.alasco.de/wp-content/uploads/2019/11/Logotype.png"
       />
     </div>

@@ -18,6 +18,23 @@ const NewItemForm = ({ onItemAdd }: Props) => {
     setName('');
     setNet('');
   }
+
+  function netValidator(n: number): number {
+    // Prevent net from going below zero
+    const validatedNet = n >= 0 ? n : 0;
+    return validatedNet;
+  }
+
+  function onItemAddClick() {
+    const newItem: NewItem = {
+      net,
+      name,
+      tax: String(calculatedTax),
+      isFavourite: false,
+    };
+    onItemAdd(newItem);
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.inputWrapper}>
@@ -42,9 +59,8 @@ const NewItemForm = ({ onItemAdd }: Props) => {
             value={net}
             placeholder="Enter an amount"
             onChange={({ currentTarget: { value } }) => {
-              const numVal = Number(value);
-              const val = numVal >= 0 ? numVal : 0;
-              setNet(String(val));
+              const validatetNet = netValidator(Number(value));
+              setNet(String(validatetNet));
             }}
           />
         </label>
@@ -68,15 +84,7 @@ const NewItemForm = ({ onItemAdd }: Props) => {
         <button
           disabled={!net || !name}
           data-cy="addItem"
-          onClick={() => {
-            const newItem: NewItem = {
-              net,
-              name,
-              tax: String(calculatedTax),
-              isFavourite: false,
-            };
-            onItemAdd(newItem);
-          }}
+          onClick={onItemAddClick}
           className={styles.add}
         >
           Add

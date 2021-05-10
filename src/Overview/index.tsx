@@ -15,7 +15,7 @@ const Overview = ({ items }: Props) => {
   const itemsCount = items.length;
   return (
     <div className={styles.wrapper}>
-        <div>Overview</div>
+        <h3>Overview</h3>
         <div>
           <div>Total Sum</div>
           <div data-cy="overviewSum">{formatCurrency(sum)}</div>

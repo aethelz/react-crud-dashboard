@@ -9,29 +9,27 @@ type Props = {
 };
 const ItemTable = ({ items, onItemRemove, onItemToggleFavorite }: Props) => {
   return (
-    <div className={styles.wrapper}>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Net</th>
-            <th>Tax</th>
-            <th>Gross</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody data-cy="itemContainer">
-          {items.map(item => (
-            <ItemRow
-              onCrossClick={() => onItemRemove(item.id)}
-              onStarClick={() => onItemToggleFavorite(item.id)}
-              key={item.id}
-              item={item}
-            />
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <table className={styles.table}>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Net</th>
+          <th>Tax</th>
+          <th>Gross</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody data-cy="itemContainer">
+        {items.map(item => (
+          <ItemRow
+            onCrossClick={() => onItemRemove(item.id)}
+            onStarClick={() => onItemToggleFavorite(item.id)}
+            key={item.id}
+            item={item}
+          />
+        ))}
+      </tbody>
+    </table>
   );
 };
 
