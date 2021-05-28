@@ -1,7 +1,7 @@
 import styles from './app.module.scss';
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
-import { fetchItems } from './shared/api';
+import { mockItems } from './shared/api';
 import type { ClientItem, NewItem } from './shared/types';
 import { makeClientItemList, generateID } from './shared/utils';
 import Wrapper from './Wrapper';
@@ -14,7 +14,7 @@ import FilteredItemTable from './FilteredItemTable';
 
 function App() {
   const [clientItems, setClientItems] = useState<ClientItem[]>([]);
-  const { isLoading, data } = useQuery('items', fetchItems, {
+  const { isLoading, data } = useQuery('items', mockItems, {
     // Prevent react-query from refetching items from backend and resetting
     // client state, with production API this will not be necessary,
     // we will send POST mutations directly to the backend, although
@@ -50,7 +50,7 @@ function App() {
   return (
     <Wrapper>
       <Header />
-      <div className={styles.bodyWrapper}>
+      <main className={styles.bodyWrapper}>
         <div className={styles.nameOverviewWrapper}>
           <NewItemForm onItemAdd={onItemAdd} />
           <Overview items={clientItems} />
@@ -60,7 +60,7 @@ function App() {
           onItemRemove={onItemRemove}
           onItemToggleFavorite={onItemToggleFavorite}
         />
-      </div>
+      </main>
     </Wrapper>
   );
 }
