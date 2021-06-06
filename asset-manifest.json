@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-crud-dashboard/static/css/main.6938e37e.chunk.css",
+    "main.js": "/react-crud-dashboard/static/js/main.b57f6e7a.chunk.js",
+    "main.js.map": "/react-crud-dashboard/static/js/main.b57f6e7a.chunk.js.map",
+    "runtime-main.js": "/react-crud-dashboard/static/js/runtime-main.0d285aa5.js",
+    "runtime-main.js.map": "/react-crud-dashboard/static/js/runtime-main.0d285aa5.js.map",
+    "static/js/2.6cb60800.chunk.js": "/react-crud-dashboard/static/js/2.6cb60800.chunk.js",
+    "static/js/2.6cb60800.chunk.js.map": "/react-crud-dashboard/static/js/2.6cb60800.chunk.js.map",
+    "static/js/3.1f912c7c.chunk.js": "/react-crud-dashboard/static/js/3.1f912c7c.chunk.js",
+    "static/js/3.1f912c7c.chunk.js.map": "/react-crud-dashboard/static/js/3.1f912c7c.chunk.js.map",
+    "index.html": "/react-crud-dashboard/index.html",
+    "static/css/main.6938e37e.chunk.css.map": "/react-crud-dashboard/static/css/main.6938e37e.chunk.css.map",
+    "static/js/2.6cb60800.chunk.js.LICENSE.txt": "/react-crud-dashboard/static/js/2.6cb60800.chunk.js.LICENSE.txt",
+    "static/media/cross.d69dc0db.svg": "/react-crud-dashboard/static/media/cross.d69dc0db.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0d285aa5.js",
+    "static/js/2.6cb60800.chunk.js",
+    "static/css/main.6938e37e.chunk.css",
+    "static/js/main.b57f6e7a.chunk.js"
+  ]
+}
